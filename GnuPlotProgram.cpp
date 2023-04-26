@@ -294,9 +294,9 @@ void inverse(SquareMatrix M, SquareMatrix I) {
 }
 
 #ifdef WIN32
-    #define plot "C:\\gnuplot\\bin\\gnuplot -persist"
+#define plot "C:\\gnuplot\\bin\\gnuplot -persist"
 #else
-    #define plot "gnuplot -persist"
+#define plot "gnuplot -persist"
 #endif
 
 int main() {
@@ -334,7 +334,7 @@ int main() {
 
     cout << "x~:" << endl << f;
 
-    fprintf(pipe, "plot [-5 : 10] [0 : 30] %lf*x**2 + %lf*x**1 + %lf*x**0 , '-' using 1:2 with points\n", f.arr[2][0], f.arr[1][0], f.arr[0][0]);
+    fprintf(pipe, "plot [-5 : 10] [0 : 30] %lf*x**3 + %lf*x**2 + %lf*x**1 + %lf*x**0 , '-' using 1:2 with points\n", f.arr[3][0], f.arr[2][0], f.arr[1][0], f.arr[0][0]);
     fprintf(pipe, "plot '-' w p ls 1, '-' w p ls 2, '-' w p ls 3, '-' w p ls 4, '-' w p ls 5, '-' w p ls 6, '-' w p ls 7, '-' w p ls 8, '-' w p ls 9, '-' w p ls 10\n");
     for (int i = 0; i < m; i++) {
         fprintf(pipe, "%f\t%f\n", input.arr[i][0], b.arr[i][0]);
